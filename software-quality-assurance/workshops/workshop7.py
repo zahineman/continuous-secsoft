@@ -5,7 +5,7 @@ import hvac
 import random 
 
 def makeConn():
-    hvc_client = client = hvac.Client(url='http://127.0.0.1:8200', token='hvs.nO1nez1ePStheu4D4So7GjPQ' ) 
+    hvc_client = client = hvac.Client(url='http://127.0.0.1:8200', token='hvs.TxuSZSkHynnOgyIckK0au2GR' ) 
     return hvc_client 
 
 def storeSecret( client,  secr1 , cnt  ):
@@ -31,4 +31,29 @@ if __name__ == '__main__':
     storeSecret( clientObj,   secret2store, counter )
     print('='*50)
     retrieveSecret( clientObj,  counter )
+    print('='*50)
+#============================================================#
+    storeSecret(clientObj, "root_user", 1)
+    print('='*50)
+    retrieveSecret( clientObj,  1 )
+    print('='*50)
+
+    storeSecret(clientObj, "test_password", 2)
+    print('='*50)
+    retrieveSecret( clientObj,  2 )
+    print('='*50)
+
+    storeSecret(clientObj, "ghp_ahAyHoRwoQ", 3)
+    print('='*50)
+    retrieveSecret( clientObj,  3 )
+    print('='*50)
+
+    storeSecret(clientObj, "MTIzANO=", 4)
+    print('='*50)
+    retrieveSecret( clientObj,  4 )
+    print('='*50)
+
+    storeSecret(clientObj, "t5f28U", 5)
+    print('='*50)
+    retrieveSecret( clientObj,  5 )
     print('='*50)

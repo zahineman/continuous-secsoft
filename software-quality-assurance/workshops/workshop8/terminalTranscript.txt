@@ -1,0 +1,90 @@
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Try the new cross-platform PowerShell https://aka.ms/pscore6
+
+PS C:\Users\Zachary\Documents\GitHub\continuous-secsoft> & C:/Users/Zachary/AppData/Local/Microsoft/WindowsApps/python3.10.exe c:/Users/Zachary/Documents/GitHub/continuous-secsoft/software-quality-assurance/workshops/workshop8/cal-tdd.py
+..E...
+======================================================================
+ERROR: testDivideByZero (__main__.TestCalc)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "c:\Users\Zachary\Documents\GitHub\continuous-secsoft\software-quality-assurance\workshops\workshop8\cal-tdd.py", line 21, in testDivideByZero
+    self.assertEqual(0, calculator.divide(4, 0), "Division operation for 4/0 is = 0")
+  File "c:\Users\Zachary\Documents\GitHub\continuous-secsoft\software-quality-assurance\workshops\workshop8\calculator.py", line 12, in divide
+    raise Exception("Denominator/Divisor must be non-zero")
+Exception: Denominator/Divisor must be non-zero
+----------------------------------------------------------------------
+Ran 6 tests in 0.002s
+
+FAILED (errors=1)
+PS C:\Users\Zachary\Documents\GitHub\continuous-secsoft> & C:/Users/Zachary/AppData/Local/Microsoft/WindowsApps/python3.10.exe c:/Users/Zachary/Documents/GitHub/continuous-secsoft/software-quality-assurance/workshops/workshop8/cal-tdd.py
+..E...
+======================================================================
+ERROR: testDivideByZero (__main__.TestCalc)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "c:\Users\Zachary\Documents\GitHub\continuous-secsoft\software-quality-assurance\workshops\workshop8\cal-tdd.py", line 21, in testDivideByZero
+    self.assertEqual(0, calculator.divide(4, 0), "Division operation for 4/0 is = 0")
+  File "c:\Users\Zachary\Documents\GitHub\continuous-secsoft\software-quality-assurance\workshops\workshop8\calculator.py", line 12, in divide
+    raise Exception("Denominator/Divisor must be non-zero")
+Exception: Denominator/Divisor must be non-zero
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.002s
+
+FAILED (errors=1)
+PS C:\Users\Zachary\Documents\GitHub\continuous-secsoft> bandit -r C:\Users\Zachary\Documents\GitHub\continuous-secsoft\software-quality-assurance\workshops\workshop8\cal-tdd.py
+[main]  INFO    profile include tests: None
+[main]  INFO    profile exclude tests: None
+[main]  INFO    cli include tests: None
+[main]  INFO    cli exclude tests: None
+Run started:2022-11-08 04:10:57.888993
+
+Test results:
+        No issues identified.
+
+Code scanned:
+        Total lines of code: 17
+        Total lines skipped (#nosec): 0
+
+Run metrics:
+        Total issues (by severity):
+                Undefined: 0
+                Low: 0
+                Medium: 0
+                High: 0
+        Total issues (by confidence):
+                Undefined: 0
+                Low: 0
+                Medium: 0
+                High: 0
+Files skipped (0):
+PS C:\Users\Zachary\Documents\GitHub\continuous-secsoft> bandit -r C:\Users\Zachary\Documents\GitHub\continuous-secsoft\software-quality-assurance\workshops\workshop8\calculator.py
+[main]  INFO    profile include tests: None
+[main]  INFO    profile exclude tests: None
+[main]  INFO    cli include tests: None
+[main]  INFO    cli exclude tests: None
+[main]  INFO    running on Python 3.10.6
+Run started:2022-11-08 04:11:17.875169
+
+Test results:
+        No issues identified.
+
+Code scanned:
+        Total lines of code: 11
+        Total lines skipped (#nosec): 0
+
+Run metrics:
+        Total issues (by severity):
+                Undefined: 0
+                Low: 0
+                Medium: 0
+                High: 0
+        Total issues (by confidence):
+                Undefined: 0
+                Low: 0
+                Medium: 0
+                High: 0
+Files skipped (0):
+PS C:\Users\Zachary\Documents\GitHub\continuous-secsoft> 
